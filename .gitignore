@@ -1,0 +1,8 @@
+# editor configuration
+.idea
+
+# git
+.git
+
+# test file
+main.go
