@@ -1,6 +1,8 @@
 package types
 
-import "github.com/kenlab/prolly-trees/go/utils"
+import (
+	"github.com/kenlab/prolly-trees/pkg/utils"
+)
 
 type String struct {
 	s string

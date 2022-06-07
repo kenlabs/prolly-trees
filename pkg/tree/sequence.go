@@ -1,6 +1,8 @@
 package tree
 
-import "github.com/kenlab/prolly-trees/go/types"
+import (
+	"github.com/kenlab/prolly-trees/pkg/types"
+)
 
 type Sequence struct {
 	EntrySet Entries
@@ -16,7 +18,7 @@ func NewSequence(entries Entries, closed bool) Sequence {
 	}
 }
 
-// Find return entry that's key is equal to parameter using the callback function.
+// Find return entry that's key is equal to parameter
 func (s Sequence) Find(key types.Value) Entry {
 	for _, v := range s.EntrySet {
 		if v.Key.Equal(key) {
@@ -27,20 +29,20 @@ func (s Sequence) Find(key types.Value) Entry {
 }
 
 // MultiFind return the result of find all entries whose key is in keys parameter
-// If your keys is sorted, set the sorted to true.
-// If you want the result that is strictly bigger or less than keys, set the strict to true.
 func (s Sequence) MultiFind(keys types.Values) Entries {
 
 	var res Entries
 
 	vi := make(map[types.Value]bool)
 
-	for _, v := range s.EntrySet {
-		vi[v.Key] = true
+	for _, v := range keys {
+		vi[v] = true
 	}
 
 	for _, v := range s.EntrySet {
-		res = append(res, v)
+		if vi[v.Key] {
+			res = append(res, v)
+		}
 	}
 
 	return res

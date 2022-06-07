@@ -1,9 +1,9 @@
 package tree
 
 import (
-	"github.com/kenlab/prolly-trees/go/codec"
-	"github.com/kenlab/prolly-trees/go/hash"
-	"github.com/kenlab/prolly-trees/go/types"
+	"github.com/kenlab/prolly-trees/pkg/codec"
+	"github.com/kenlab/prolly-trees/pkg/hash"
+	"github.com/kenlab/prolly-trees/pkg/types"
 )
 
 type Entry struct {

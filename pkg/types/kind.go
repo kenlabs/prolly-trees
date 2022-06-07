@@ -30,7 +30,7 @@ var KindToString = map[Kind]string{
 	TypeKind:   "type",
 }
 
-// toString return the name of kind.
-func (k Kind) toString() string {
+// String return the name of kind.
+func (k Kind) String() string {
 	return KindToString[k]
 }
